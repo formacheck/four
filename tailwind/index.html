@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="dist/output.css" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- <h1 class="text-center text-lg text-blue-400">hello world</h1>
+  <div class="w-full h-10 bg-violet-200 border-violet-600 rounded-md my-4 p-2">
+    <p class="text-center font-mono font-extrabold text-[50px]">A div</p>
+  </div> -->
+
+  <!-- layout and flex box -->
+
+  <main class="p-5">
+
+    <h1 class="text-center text-lg text-blue-400">hello world</h1>
+
+    <div class="w-full h-10 bg-violet-200 border-violet-600 rounded-md my-4 p-2 border-2">
+      <p class="text-center font-mono font-extrabold">A div</p>
+    </div>
+
+    <!-- layout and flexbox -->
+    <!-- position -->
+    <div class="fixed w-10 h-10 bg-red-500 top-0"></div>
+    <!-- display -->
+    <div class="flex justify-center space-x-6">
+      <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+      <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+      <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+    </div>
+
+    <div class="grid grid-cols-5 gap-2 mt-3">
+      <div class="bg-violet-500 h-12"></div>
+      <div class="bg-violet-500 h-12"></div>
+      <div class="bg-violet-500 h-12"></div>
+      <div class="bg-violet-500 h-12"></div>
+      <div class="bg-violet-500 h-12"></div>
+    </div>
+
+    <!-- media queries and break pionts -->
+
+    <div class="md:block hidden mt-3">
+      <p class="">i will appear for device greater than 768px</p>
+    </div>
+    <div class="max-md:block hidden mt-3">
+      <p class="">i will appear for device smaller than 768px</p>
+    </div>
+
+    <!--  -->
+    <button class="my-2 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 
+      focus:outline-none focus:ring focus:ring-blue-300 active:blue-800">click
+      me</button>
+
+    <ul class="my-2 space-y-2">
+      <li class="bg-white p-2 first:bg-yellow-100">item1</li>
+      <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">item2</li>
+      <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">item3</li>
+      <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">item4</li>
+      <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">item5</li>
+    </ul>
+
+    <!-- dark and light theme -->
+    <!-- editing the configfile add this -->
+    <!-- before edit -->
+    <!-- /** @type {import('tailwindcss').Config} */
+    module.exports = {
+    content: ["*.{html,js}"],
+    theme: {
+    extend: {},
+    },
+    plugins: [],
+    } -->
+    <!-- after edit -->
+    <!-- added darkMode:"class" -->
+    <!-- /** @type {import('tailwindcss').Config} */
+    module.exports = {
+    content: ["*.{html,js}"],
+    darkMode:"class",
+    theme: {
+    extend: {},
+    },
+    plugins: [],
+    } -->
+
+    <!-- theme dark: -->
+
+    <div class="m-10  rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-black">
+      <h3 class="text-base font-medium tracking-tight text-slate-900 dark:text-white">this is a text element</h3>
+      <p class="mt-2 text-sm text-slate-500 dark:text-blue-100">this is an even longer p tag element</p>
+
+      <button id="toggleDark" class="text-blue-900 px-4 py-2 text-sm font-medium mt-8
+       bg-blue-100 rounded-md" onclick="document.body.classList.toggle('dark')">
+        toggle
+        dark mode
+      </button>
+
+    </div>
+
+    <p class="text-xl text-chestnut rounded-[16px] bg-stone-100 p-[16px]"> chestnut color</p>
+
+    <!-- creating your own custom class. check the input.css file to see the card class. a custom class we created
+    using thesame tailwind classes as above  -->
+    <div class="card">
+      <h3 class="text-base font-medium tracking-tight text-slate-900 dark:text-white">this is a text element</h3>
+      <p class="mt-2 text-sm text-slate-500 dark:text-blue-100">this is an even longer p tag element</p>
+
+      <button id="toggleDark" class="text-blue-900 px-4 py-2 text-sm font-medium mt-8
+       bg-blue-100 rounded-md" onclick="document.body.classList.toggle('dark')">
+        toggle
+        dark mode
+      </button>
+
+    </div>
+
+
+  </main>
+
+
+  <!-- check tailwind component libries like
+    shadcn
+    tailwindui
+    headlessui
+
+    this are libries that provide you with components like button, inputs with base styles apply. that you can still
+    customize
+    -->
+
+
+
+  <!--  To showcase the demo of dark theme. Copy paste :) -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleDark = document.getElementById('toggleDark')
+      toggleDark.addEventListener('click', function () {
+        if (document.documentElement.classList.includes('dark')) {
+          document.documentElement.classList.remove('dark')
+        }
+        else {
+          document.documentElement.classList.add('dark')
+        }
+        alert("click!")
+      });
+    });
+  </script>
+
+</body>
+
+</html>
